@@ -14,11 +14,17 @@ dependencies {
             'com.codeborne:selenide:6.5.0',
             'org.junit.jupiter:junit-jupiter:5.8.2'
     )
+    testRuntimeOnly('org.slf4j:slf4j-simple:1.7.36')
 
 }
 
 test {
     useJUnitPlatform()
+}
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
 }
 
 tasks.withType(JavaCompile) {
